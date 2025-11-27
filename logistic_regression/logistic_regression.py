@@ -2,15 +2,14 @@ import numpy as np
 
 
 class LogisticRegression:
-    def __init__(self, lr=0.001, num_iterations=1000):
+    def __init__(self, lr=0.0001, num_iterations=1000):
         self.lr = lr
         self.num_iterations = num_iterations
         self.weights = None
         self.bias = None
 
     def fit(self, X, y):
-        y = y.reshape(-1)
-        n_samples, n_features = X.shape[0]
+        n_samples, n_features = X.shape
         self.bias = 0
         self.weights = np.zeros(n_features)
 
